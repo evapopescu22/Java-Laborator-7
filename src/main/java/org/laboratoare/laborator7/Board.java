@@ -6,20 +6,20 @@ import java.util.List;
 
 public class Board {
 	
-	int number=10;
-	List<Token> tokensList = new ArrayList<>();
+	static int number=6;
+	static List<Token> tokensList = new ArrayList<>();
 	
 	public Board() {
 		
 	}
 	
 	public Board ( int number, List<Token> tokensList) {
-		this.number=number;
-		this.tokensList=tokensList;
+		Board.number=number;
+		Board.tokensList=tokensList;
 		
 	}
 	
-	 public int getNumber() {
+	 public static int getNumber() {
 		 
 	        return number;
 	    }
@@ -30,7 +30,7 @@ public class Board {
 	    }
 	 
 	 public void setToken(List<Token> tokensList) {
-	        this.tokensList = tokensList;
+	        Board.tokensList = tokensList;
 	    }
 	 
 	
@@ -46,3 +46,4 @@ public class Board {
 	                ;
 	    }
 }
+

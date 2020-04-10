@@ -43,7 +43,7 @@ public class Player  implements Runnable  {
 	public  void run()  {
 		int i=0;
 		int j=0;
-		while(!Board.tokensList.isEmpty()) {
+		while(!Board.tokensList.isEmpty() && win()==0) {
 			try {
 				ins.acquire();
 			} catch (InterruptedException e) {
@@ -51,7 +51,7 @@ public class Player  implements Runnable  {
 				e.printStackTrace();
 			}
 			  Random rand = new Random();
-			 if (!Board.tokensList.isEmpty()) {
+			 if (!Board.tokensList.isEmpty() ) {
 			  Token randomElement = Board.tokensList.get(rand.nextInt(Board.tokensList.size()));
 			  
 			  if(Thread.currentThread().getName()=="Player1") {
@@ -74,10 +74,10 @@ public class Player  implements Runnable  {
 		if(Board.tokensList.isEmpty() && Thread.currentThread().getName()=="Player2" ) 
 			System.out.println("Player2 tokens:" + Arrays.toString(player2));
 		
-		   
 	    }			 
-	
+	     public int win()
+	     {
+	    	 return 0;
+	     }
 	  		
 	 }
-	
-
